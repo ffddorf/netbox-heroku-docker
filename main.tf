@@ -5,12 +5,6 @@ locals {
   ]
 }
 
-module "origin_cert" {
-  source = "./modules/cf-origin-ca"
-
-  common_names = local.domains
-}
-
 module "netbox" {
   source = "./modules/netbox-heroku"
 

@@ -1,6 +1,7 @@
 locals {
   domains = [
     "netbox-test.freifunk-duesseldorf.de",
+    "netbox-next.freifunk-duesseldorf.de",
   ]
 }
 
@@ -13,7 +14,7 @@ module "origin_cert" {
 module "netbox" {
   source = "./modules/netbox-heroku"
 
-  app_name = "ffddorf-netbox-test"
+  app_name = "ffddorf-netbox-next"
   config_vars = {
     LOGIN_REQUIRED = "true"
   }

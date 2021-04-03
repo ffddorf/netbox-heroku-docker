@@ -1,15 +1,20 @@
 locals {
   domains = [
-    "netbox-test.freifunk-duesseldorf.de",
     "netbox-next.freifunk-duesseldorf.de",
+    "netbox.freifunk-duesseldorf.de",
   ]
 }
 
-module "origin_cert" {
-  source = "./modules/cf-origin-ca"
-
-  common_names = local.domains
+terraform {
+  required_providers {
+    cloudflare = {
+      source  = "cloudflare/cloudflare"
+      version = "2.19.2"
+    }
+  }
 }
+
+provider "cloudflare" {}
 
 module "netbox" {
   source = "./modules/netbox-heroku"

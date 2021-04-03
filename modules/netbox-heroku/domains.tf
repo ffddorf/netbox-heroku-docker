@@ -13,6 +13,6 @@ resource "heroku_domain" "netbox" {
 output "dns_names" {
   value = [for d in heroku_domain.netbox : {
     record_name = d.hostname
-    target      = d.cname
+    target      = var.ssl_certificate_enabled ? heroku_cert.custom_cert[0].cname : d.cname
   }]
 }

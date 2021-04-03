@@ -6,7 +6,6 @@ module "netbox" {
     LOGIN_REQUIRED = "true"
   }
   custom_domains = [
-    "netbox.freifunk-duesseldorf.de",
     "netbox-test.freifunk-duesseldorf.de",
   ]
 }

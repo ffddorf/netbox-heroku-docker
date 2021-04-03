@@ -17,7 +17,7 @@ resource "heroku_formation" "netbox_web" {
 resource "heroku_formation" "netbox_worker" {
   app        = heroku_app.netbox.id
   type       = "worker"
-  quantity   = 0
+  quantity   = 1
   size       = "free"
   depends_on = [heroku_build.netbox]
 }

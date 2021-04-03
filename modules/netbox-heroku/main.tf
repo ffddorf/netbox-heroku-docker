@@ -30,6 +30,7 @@ resource "heroku_app" "netbox" {
   name   = var.app_name
   region = var.app_region
   stack  = "container"
+  acm    = true
 
   config_vars = var.config_vars
   sensitive_config_vars = {

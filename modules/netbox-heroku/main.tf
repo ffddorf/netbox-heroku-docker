@@ -21,7 +21,7 @@ variable "config_vars" {
   default = {}
 }
 
-resource "random_password" "password" {
+resource "random_password" "secret_key" {
   length  = 60
   special = true
 }
@@ -34,6 +34,6 @@ resource "heroku_app" "netbox" {
 
   config_vars = var.config_vars
   sensitive_config_vars = {
-    SECRET_KEY = random_password.password.result
+    SECRET_KEY = random_password.secret_key.result
   }
 }

@@ -38,7 +38,3 @@ resource "heroku_app" "netbox" {
     SECRET_KEY = random_password.password.result
   }
 }
-
-output "dns_name" {
-  value = heroku_app.netbox.heroku_hostname
-}

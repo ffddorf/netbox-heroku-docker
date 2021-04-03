@@ -1,7 +1,7 @@
 locals {
   domains = [
-    "netbox-test.freifunk-duesseldorf.de",
     "netbox-next.freifunk-duesseldorf.de",
+    "netbox.freifunk-duesseldorf.de",
   ]
 }
 

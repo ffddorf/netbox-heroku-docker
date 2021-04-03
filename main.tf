@@ -14,6 +14,7 @@ module "origin_cert" {
 module "netbox" {
   source = "./modules/netbox-heroku"
 
+  # warning: Changing this may recreate the DB, deleting data
   app_name = "ffddorf-netbox-next"
   config_vars = {
     LOGIN_REQUIRED = "true"

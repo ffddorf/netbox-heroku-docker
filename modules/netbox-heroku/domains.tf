@@ -9,3 +9,10 @@ resource "heroku_domain" "netbox" {
   app      = heroku_app.netbox.id
   hostname = each.value
 }
+
+output "dns_names" {
+  value = [for d in heroku_domain.netbox : {
+    record_name = d.hostname
+    target      = d.cname
+  }]
+}

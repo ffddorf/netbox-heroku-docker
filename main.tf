@@ -19,10 +19,6 @@ module "netbox" {
     LOGIN_REQUIRED = "true"
   }
   custom_domains = local.domains
-
-  ssl_certificate_enabled = true
-  ssl_certificate_pem     = module.origin_cert.origin_certificate
-  ssl_private_key_pem     = module.origin_cert.origin_private_key
 }
 
 output "dns_names" {

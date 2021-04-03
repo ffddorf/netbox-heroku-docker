@@ -10,7 +10,7 @@ resource "heroku_formation" "netbox_web" {
   app        = heroku_app.netbox.uuid
   type       = "web"
   quantity   = 1
-  size       = "free"
+  size       = "hobby"
   depends_on = [heroku_build.netbox]
 }
 
@@ -18,6 +18,6 @@ resource "heroku_formation" "netbox_worker" {
   app        = heroku_app.netbox.uuid
   type       = "worker"
   quantity   = 1
-  size       = "free"
+  size       = "hobby"
   depends_on = [heroku_build.netbox]
 }

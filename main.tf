@@ -6,3 +6,7 @@ module "netbox" {
     LOGIN_REQUIRED = "true"
   }
 }
+
+output "dns_name" {
+  value = module.netbox.dns_name
+}

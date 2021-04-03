@@ -1,0 +1,19 @@
+build:
+  docker:
+    release:
+      dockerfile: Dockerfile
+      target: release
+    web:
+      dockerfile: Dockerfile
+      target: web
+release:
+  image: release
+run:
+  web:
+    image: web
+    command:
+      - /opt/netbox-heroku/web.sh
+  worker:
+    image: web
+    command:
+      - /opt/netbox-heroku/worker.sh

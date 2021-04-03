@@ -17,7 +17,7 @@ variable "ssl_private_key_pem" {
 resource "heroku_addon" "ssl" {
   count = var.ssl_certificate_enabled ? 1 : 0
 
-  app  = heroku_app.netbox.id
+  app  = heroku_app.netbox.uuid
   plan = "ssl"
 }
 
@@ -25,7 +25,7 @@ resource "heroku_addon" "ssl" {
 resource "heroku_cert" "custom_cert" {
   count = var.ssl_certificate_enabled ? 1 : 0
 
-  app               = heroku_app.netbox.id
+  app               = heroku_app.netbox.uuid
   certificate_chain = var.ssl_certificate_pem
   private_key       = var.ssl_private_key_pem
   depends_on        = [heroku_addon.ssl]

@@ -6,7 +6,7 @@ variable "custom_domains" {
 resource "heroku_domain" "netbox" {
   for_each = toset(var.custom_domains)
 
-  app      = heroku_app.netbox.id
+  app      = heroku_app.netbox.uuid
   hostname = each.value
 }
 

@@ -7,7 +7,7 @@ resource "heroku_build" "netbox" {
 }
 
 resource "heroku_formation" "netbox_web" {
-  app        = heroku_app.netbox.uuid
+  app        = heroku_app.netbox.id
   type       = "web"
   quantity   = 1
   size       = "hobby"
@@ -15,7 +15,7 @@ resource "heroku_formation" "netbox_web" {
 }
 
 resource "heroku_formation" "netbox_worker" {
-  app        = heroku_app.netbox.uuid
+  app        = heroku_app.netbox.id
   type       = "worker"
   quantity   = 1
   size       = "hobby"

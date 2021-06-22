@@ -1,5 +1,5 @@
 # pinned to specific release
-ARG NETBOX_VERSION=v2.11.6
+ARG NETBOX_VERSION=v2.11.7
 FROM netboxcommunity/netbox:${NETBOX_VERSION} AS base
 
 RUN /opt/netbox/venv/bin/pip install dj-database-url

@@ -7,3 +7,8 @@ terraform {
     }
   }
 }
+
+provider "google" {
+  project = "netbox-323812"
+  region  = "europe-west3"
+}

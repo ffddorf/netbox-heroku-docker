@@ -2,7 +2,8 @@
 ARG NETBOX_VERSION=v2.11.7
 FROM netboxcommunity/netbox:${NETBOX_VERSION} AS base
 
-RUN /opt/netbox/venv/bin/pip install dj-database-url
+COPY requirements.txt /opt/netbox-heroku/requirements.txt
+RUN /opt/netbox/venv/bin/pip install -r /opt/netbox-heroku/requirements.txt
 COPY configuration.heroku.py /etc/netbox/config/
 
 FROM base AS release

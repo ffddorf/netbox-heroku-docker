@@ -36,7 +36,9 @@ resource "heroku_app" "netbox" {
   stack  = "container"
   acm    = true
 
-  config_vars = var.config_vars
+  config_vars = merge({
+    ASSETS_GCS_BUCKET_NAME = google_storage_bucket.assets.name
+  }, var.config_vars)
   sensitive_config_vars = {
     SECRET_KEY             = random_password.secret_key.result
     GOOGLE_SERVICE_ACCOUNT = base64decode(google_service_account_key.asset-access-key.private_key)

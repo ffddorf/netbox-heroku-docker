@@ -10,7 +10,7 @@ resource "google_service_account" "asset-access" {
 
 resource "google_storage_bucket_iam_member" "asset-access" {
   bucket = google_storage_bucket.assets.name
-  role   = "roles/storage.editor"
+  role   = "roles/storage.objectAdmin"
   member = "serviceAccount:${google_service_account.asset-access.email}"
 }
 

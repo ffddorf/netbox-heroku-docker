@@ -63,6 +63,9 @@ load_configuration() {
   echo "✅ Unit configuration loaded successfully"
 }
 
+# Gather openapi spec
+python manage.py generate_swagger static/openapi.json
+
 load_configuration &
 
 exec unitd \

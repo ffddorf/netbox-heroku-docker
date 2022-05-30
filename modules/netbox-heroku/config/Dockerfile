@@ -1,5 +1,5 @@
 # pinned to specific release
-ARG NETBOX_VERSION=v3.1.11
+ARG NETBOX_VERSION=v3.2.3
 FROM netboxcommunity/netbox:${NETBOX_VERSION} AS base
 
 COPY requirements.txt /opt/netbox-heroku/requirements.txt

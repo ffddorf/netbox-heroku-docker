@@ -37,3 +37,7 @@ STORAGE_CONFIG = {
     'GS_FILE_OVERWRITE': False,
     'GS_EXPIRATION': timedelta(seconds=3600),
 }
+
+PLUGINS = [
+    'netbox_secretstore',
+]

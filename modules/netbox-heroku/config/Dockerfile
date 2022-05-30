@@ -3,6 +3,7 @@ ARG NETBOX_VERSION=v3.1.11
 FROM netboxcommunity/netbox:${NETBOX_VERSION} AS base
 
 COPY requirements.txt /opt/netbox-heroku/requirements.txt
+RUN apk add gcc libstdc++ musl-dev
 RUN /opt/netbox/venv/bin/pip install -r /opt/netbox-heroku/requirements.txt
 COPY configuration.heroku.py /etc/netbox/config/
 

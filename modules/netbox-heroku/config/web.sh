@@ -68,6 +68,9 @@ python manage.py generate_swagger static/openapi.json
 
 load_configuration &
 
+# Collect static files
+python manage.py collectstatic --noinput
+
 exec unitd \
   --no-daemon \
   --control unix:$UNIT_SOCKET \

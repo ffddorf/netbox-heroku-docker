@@ -3,7 +3,10 @@ ARG NETBOX_VERSION=v3.2.6
 FROM netboxcommunity/netbox:${NETBOX_VERSION} AS base
 
 COPY requirements.txt /opt/netbox-heroku/requirements.txt
-RUN apk add gcc libstdc++ musl-dev
+RUN apt-get update && apt-get install -qy \
+  gcc \
+  libc-dev \
+  && rm -rf /var/lib/apt/lists/*
 RUN /opt/netbox/venv/bin/pip install -r /opt/netbox-heroku/requirements.txt
 COPY configuration.heroku.py /etc/netbox/config/
 
@@ -18,7 +21,9 @@ CMD [ "/opt/netbox-heroku/release.sh" ]
 
 FROM base AS patcher
 
-RUN apk add jq
+RUN apt-get update && apt-get install -qy \
+  jq \
+  && rm -rf /var/lib/apt/lists/*
 RUN cat /etc/unit/nginx-unit.json | jq '.routes |= [{match: {uri: "/api/docs/", arguments:{format: "openapi"}}, action: {return: 301, location: "/static/openapi.json"}}] + .' > /etc/unit/nginx-unit.json
 
 FROM base AS web

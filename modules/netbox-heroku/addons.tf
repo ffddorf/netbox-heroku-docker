@@ -1,12 +1,3 @@
-resource "heroku_addon" "postgres" {
-  app  = heroku_app.netbox.id
-  plan = "heroku-postgresql:hobby-dev"
-
-  lifecycle {
-    prevent_destroy = false
-  }
-}
-
 resource "heroku_addon" "postgres_basic" {
   app  = heroku_app.netbox.id
   plan = "heroku-postgresql:hobby-basic"

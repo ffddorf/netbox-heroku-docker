@@ -1,10 +1,10 @@
 terraform {
   required_providers {
     heroku = {
-      source  = "heroku/heroku"
+      source = "heroku/heroku"
     }
     google = {
-      source  = "hashicorp/google"
+      source = "hashicorp/google"
     }
   }
 }

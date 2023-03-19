@@ -1,6 +1,6 @@
 # pinned to specific release
-ARG NETBOX_VERSION=v3.2.8
-FROM netboxcommunity/netbox:${NETBOX_VERSION} AS base
+ARG NETBOX_VERSION=v3.2.9
+FROM ghcr.io/netbox-community/netbox:${NETBOX_VERSION} AS base
 
 COPY requirements.txt /opt/netbox-heroku/requirements.txt
 RUN apt-get update && apt-get install -qy \

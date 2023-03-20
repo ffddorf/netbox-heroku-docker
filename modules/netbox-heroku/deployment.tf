@@ -2,7 +2,7 @@ resource "heroku_build" "netbox" {
   app_id = heroku_app.netbox.id
 
   source {
-    path = "${path.module}/config.tar.gz"
+    path = "${path.module}/config/"
   }
 }
 

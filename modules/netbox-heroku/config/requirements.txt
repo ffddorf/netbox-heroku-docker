@@ -1,4 +1,7 @@
-dj_database_url
-google
-django-storages[google]
-netbox-secretstore
+beautifulsoup4==4.11.2
+dj-database-url==1.2.0
+google==3.0.0
+importlib==1.0.4
+netbox-secretstore==1.4.1
+pycryptodome==3.17
+soupsieve==2.4

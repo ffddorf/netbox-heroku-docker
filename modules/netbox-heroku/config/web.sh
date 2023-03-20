@@ -37,7 +37,7 @@ load_configuration() {
       http://localhost/config
   )
   if [ "$RESP_CODE" != "200" ]; then
-    echo "⚠️ Could not load Unit configuration"
+    echo "⚠️ Could not load Unit configuration, status $RESP_CODE"
     kill "$(cat /opt/unit/unit.pid)"
     return 1
   fi
@@ -50,12 +50,12 @@ load_configuration() {
       --output /dev/null \
       --write-out '%{http_code}' \
       --request PUT \
-      --data "{\"*:${PORT}\": {\"pass\": \"routes\"}}" \
+      --data "{\"*:${PORT}\": {\"pass\": \"routes/main\"}}" \
       --unix-socket $UNIT_SOCKET \
       http://localhost/config/listeners
   )
   if [ "$RESP_CODE" != "200" ]; then
-    echo "⚠️ Could not load Unit configuration"
+    echo "⚠️ Could not load Unit configuration, status $RESP_CODE"
     kill "$(cat /opt/unit/unit.pid)"
     return 1
   fi

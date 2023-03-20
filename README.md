@@ -13,18 +13,7 @@ Feel free to open a PR with your improvements. Terraform Cloud will run a plan o
 
 ## Developing
 
-Due to [a bug in the Heroku Terraform provider](https://github.com/heroku/terraform-provider-heroku/issues/272) we need to check a tar archive of the deployment artifact into git and update it whenever we make changes. This might go away once the bug is fixed.
-
-On _macOS_ please install GNU Tar:
-```sh
-brew install gnu-tar
-```
-
-Run this **whenever making changes to `modules/netbox-heroku/config`**:
-
-```sh
-./generate.sh
-```
+You can run a speculative remote plan from your CLI if you're logged into Terraform Cloud: `terraform plan`
 
 ## License
 

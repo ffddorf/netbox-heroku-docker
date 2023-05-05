@@ -39,6 +39,5 @@ STORAGE_CONFIG = {
 }
 
 PLUGINS = [
-    'netbox_secretstore',
     'netbox_secrets',
 ]

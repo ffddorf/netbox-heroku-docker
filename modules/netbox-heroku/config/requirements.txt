@@ -1,6 +1,7 @@
-beautifulsoup4==4.12.2
+beautifulsoup4==4.11.2
 dj-database-url==2.0.0
 google==3.0.0
-netbox-secrets==1.8.1
+importlib==1.0.4
+netbox-secrets==1.7.6
 pycryptodome==3.17
-soupsieve==2.4.1
+soupsieve==2.4

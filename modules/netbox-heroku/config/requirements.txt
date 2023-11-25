@@ -4,4 +4,4 @@ google==3.0.0
 importlib==1.0.4
 netbox-secrets==1.7.6
 pycryptodome==3.17
-soupsieve==2.4
+soupsieve==2.5

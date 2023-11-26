@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e -o pipefail
+
 # Generate static openapi spec
 python manage.py spectacular --file static/openapi.json
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Gather openapi spec
-python manage.py generateschema static/openapi.json
+# Generate static openapi spec
+python manage.py spectacular --file static/openapi.json
 
 # Collect static files
 python manage.py collectstatic --noinput

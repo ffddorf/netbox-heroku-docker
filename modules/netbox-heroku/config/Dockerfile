@@ -6,6 +6,7 @@ COPY requirements.txt /opt/netbox-heroku/requirements.txt
 RUN apt-get update && apt-get install -qy \
   gcc \
   libc-dev \
+  jq \
   && rm -rf /var/lib/apt/lists/*
 RUN /opt/netbox/venv/bin/pip install -r /opt/netbox-heroku/requirements.txt
 COPY configuration.heroku.py /etc/netbox/config/

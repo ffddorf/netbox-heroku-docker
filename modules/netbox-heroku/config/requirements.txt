@@ -1,4 +1,4 @@
-beautifulsoup4==4.12.2
+beautifulsoup4==4.12.3
 dj-database-url==2.1.0
 google==3.0.0
 netbox-secrets==1.10.1

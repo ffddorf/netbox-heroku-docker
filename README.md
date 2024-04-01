@@ -1,3 +1,5 @@
+# DEPRECATION NOTICE: This setup is no longer in use and will not be maintained
+
 # Netbox Deployment on Heroku
 
 Our Netbox deployment
